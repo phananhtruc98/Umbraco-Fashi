@@ -4,6 +4,7 @@
 @{
     var websiteInfo = Umbraco.ContentAtRoot().FirstOrDefault(x => x.ContentType.Alias == "home");
     var socialMedia = websiteInfo.Value<List<SocialMedia>>("socialMedia");
+    var menu = websiteInfo.Value<List<CommonObject>>("menu");
 }
 
 
@@ -177,7 +178,13 @@
                 </div>
                 <nav class="nav-menu mobile-menu">
                     <ul>
-                        <li class="active"><a href="./index.html">Home</a></li>
+                        @{
+                            foreach (var item in menu)
+                            {
+                                <li><a href="@item.ObjectUrl">@item.ObjectName</a></li>
+                            }
+                        }
+                        @*<li class="active"><a href="./index.html">Home</a></li>
                         <li><a href="./shop.html">Shop</a></li>
                         <li>
                             <a href="#">Collection</a>
@@ -199,7 +206,7 @@
                                 <li><a href="./register.html">Register</a></li>
                                 <li><a href="./login.html">Login</a></li>
                             </ul>
-                        </li>
+                        </li>*@
                     </ul>
                 </nav>
                 <div id="mobile-menu-wrap"></div>
