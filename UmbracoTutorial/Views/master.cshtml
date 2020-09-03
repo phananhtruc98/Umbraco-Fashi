@@ -5,6 +5,9 @@
     var websiteInfo = Umbraco.ContentAtRoot().FirstOrDefault(x => x.ContentType.Alias == "home");
     var socialMedia = websiteInfo.Value<List<SocialMedia>>("socialMedia");
     var menu = websiteInfo.Value<List<CommonObject>>("menu");
+    var categories = websiteInfo.Value<List<CommonObject>>("categories");
+    var myAccount = websiteInfo.Value<List<CommonObject>>("myAccount");
+    var information = websiteInfo.Value<List<CommonObject>>("information");
 }
 
 
@@ -91,7 +94,6 @@
                     </div>
                     <div class="col-lg-7 col-md-7">
                         <div class="advanced-search">
-                            <button type="button" class="category-btn">All Categories</button>
                             <div class="input-group">
                                 <input type="text" placeholder="What do you need?">
                                 <button type="button"><i class="ti-search"></i></button>
@@ -163,16 +165,14 @@
                 <div class="nav-depart">
                     <div class="depart-btn">
                         <i class="ti-menu"></i>
-                        <span>All departments</span>
+                        <span>All categories</span>
                         <ul class="depart-hover">
-                            <li class="active"><a href="#">Women’s Clothing</a></li>
-                            <li><a href="#">Men’s Clothing</a></li>
-                            <li><a href="#">Underwear</a></li>
-                            <li><a href="#">Kid's Clothing</a></li>
-                            <li><a href="#">Brand Fashion</a></li>
-                            <li><a href="#">Accessories/Shoes</a></li>
-                            <li><a href="#">Luxury Brands</a></li>
-                            <li><a href="#">Brand Outdoor Apparel</a></li>
+                            @{
+                                foreach (var item in categories)
+                                {
+                                    <li><a href="@item.ObjectUrl">@item.ObjectName</a></li>
+                                }
+                            }
                         </ul>
                     </div>
                 </div>
@@ -246,10 +246,12 @@
                     <div class="footer-widget">
                         <h5>Information</h5>
                         <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Checkout</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Serivius</a></li>
+                            @{
+                                foreach (var item in information)
+                                {
+                                    <li><a href="@item.ObjectUrl">@item.ObjectName</a></li>
+                                }
+                            }
                         </ul>
                     </div>
                 </div>
@@ -257,10 +259,12 @@
                     <div class="footer-widget">
                         <h5>My Account</h5>
                         <ul>
-                            <li><a href="#">My Account</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Shopping Cart</a></li>
-                            <li><a href="#">Shop</a></li>
+                            @{
+                                foreach (var item in myAccount)
+                                {
+                                    <li><a href="@item.ObjectUrl">@item.ObjectName</a></li>
+                                }
+                            }
                         </ul>
                     </div>
                 </div>
