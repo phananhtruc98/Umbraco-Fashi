@@ -19,37 +19,93 @@ using Umbraco.ModelsBuilder.Embedded;
 
 namespace Umbraco.Web.PublishedModels
 {
-	/// <summary>Home</summary>
-	[PublishedModel("home")]
-	public partial class Home : PublishedContentModel, ISEO
+	/// <summary>Root</summary>
+	[PublishedModel("root")]
+	public partial class Root : PublishedContentModel, ISEO
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		public new const string ModelTypeAlias = "home";
+		public new const string ModelTypeAlias = "root";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Home, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Root, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public Home(IPublishedContent content)
+		public Root(IPublishedContent content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Banner
+		/// Address
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
-		[ImplementPropertyType("banner")]
-		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent> Banner => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>>("banner");
+		[ImplementPropertyType("address")]
+		public string Address => this.Value<string>("address");
+
+		///<summary>
+		/// Categories
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("categories")]
+		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent> Categories => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>>("categories");
+
+		///<summary>
+		/// Email
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("email")]
+		public string Email => this.Value<string>("email");
+
+		///<summary>
+		/// Information
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("information")]
+		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.Models.Link> Information => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.Models.Link>>("information");
+
+		///<summary>
+		/// Logo Website
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("logoWebsite")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent LogoWebsite => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("logoWebsite");
+
+		///<summary>
+		/// My Account
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("myAccount")]
+		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.Models.Link> MyAccount => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.Models.Link>>("myAccount");
+
+		///<summary>
+		/// Phone Number
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("phoneNumber")]
+		public string PhoneNumber => this.Value<string>("phoneNumber");
+
+		///<summary>
+		/// Social Media
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("socialMedia")]
+		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.SocialMedia> SocialMedia => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.SocialMedia>>("socialMedia");
+
+		///<summary>
+		/// Website Name
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.1")]
+		[ImplementPropertyType("websiteName")]
+		public string WebsiteName => this.Value<string>("websiteName");
 
 		///<summary>
 		/// Browser Title

@@ -2,12 +2,12 @@
 
 
 @{
-    var websiteInfo = Umbraco.ContentAtRoot().FirstOrDefault(x => x.ContentType.Alias == "home");
-    var socialMedia = websiteInfo.Value<List<SocialMedia>>("socialMedia");
-    var menu = websiteInfo.Value<List<CommonObject>>("menu");
-    var categories = websiteInfo.Value<List<CommonObject>>("categories");
-    var myAccount = websiteInfo.Value<List<CommonObject>>("myAccount");
-    var information = websiteInfo.Value<List<CommonObject>>("information");
+//var websiteInfo = Umbraco.ContentAtRoot().FirstOrDefault().Children.FirstOrDefault( => x.ContentType.Alias == "home");
+//var socialMedia = websiteInfo.Value<List<SocialMedia>>("socialMedia");
+//var menu = websiteInfo.Value<List<CommonObject>>("menu");
+//var categories = websiteInfo.Value<List<CommonObject>>("categories");
+//var myAccount = websiteInfo.Value<List<CommonObject>>("myAccount");
+//var information = websiteInfo.Value<List<CommonObject>>("information");
 }
 
 
@@ -50,11 +50,11 @@
                 <div class="ht-left">
                     <div class="mail-service">
                         <i class=" fa fa-envelope"></i>
-                        @websiteInfo.Value("email")
+                        @*@websiteInfo.Value("email")*@
                     </div>
                     <div class="phone-service">
                         <i class=" fa fa-phone"></i>
-                        @websiteInfo.Value("phoneNumber")
+                        @*@websiteInfo.Value("phoneNumber")*@
                     </div>
                 </div>
                 <div class="ht-right">
@@ -72,12 +72,12 @@
                         </select>
                     </div>
                     <div class="top-social">
-                        @{
+                        @*@{
                             foreach (var item in socialMedia)
                             {
                                 <a href="@item.Link"><i class="fa fa-@item.SocialMediaName.ToLower()"></i></a>
                             }
-                        }
+                        }*@
                     </div>
                 </div>
             </div>
@@ -166,24 +166,24 @@
                     <div class="depart-btn">
                         <i class="ti-menu"></i>
                         <span>All categories</span>
-                        <ul class="depart-hover">
+                        @*<ul class="depart-hover">
                             @{
                                 foreach (var item in categories)
                                 {
                                     <li><a href="@item.ObjectUrl">@item.ObjectName</a></li>
                                 }
                             }
-                        </ul>
+                        </ul>*@
                     </div>
                 </div>
                 <nav class="nav-menu mobile-menu">
                     <ul>
-                        @{
+                        @*@{
                             foreach (var item in menu)
                             {
                                 <li><a href="@item.ObjectUrl">@item.ObjectName</a></li>
                             }
-                        }
+                        }*@
                         @*<li class="active"><a href="./index.html">Home</a></li>
                         <li><a href="./shop.html">Shop</a></li>
                         <li>
@@ -224,7 +224,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="footer-left">
-                        <div class="footer-logo">
+                        @*<div class="footer-logo">
                             <a href="#"><img src="img/footer-logo.png" alt=""></a>
                         </div>
                         <ul>
@@ -239,33 +239,33 @@
                                     <a href="@item.Link"><i class="fa fa-@item.SocialMediaName.ToLower()"></i></a>
                                 }
                             }
-                        </div>
+                        </div>*@
                     </div>
                 </div>
                 <div class="col-lg-2 offset-lg-1">
                     <div class="footer-widget">
                         <h5>Information</h5>
-                        <ul>
+                        @*<ul>
                             @{
                                 foreach (var item in information)
                                 {
                                     <li><a href="@item.ObjectUrl">@item.ObjectName</a></li>
                                 }
                             }
-                        </ul>
+                        </ul>*@
                     </div>
                 </div>
                 <div class="col-lg-2">
                     <div class="footer-widget">
                         <h5>My Account</h5>
-                        <ul>
+                        @*<ul>
                             @{
                                 foreach (var item in myAccount)
                                 {
                                     <li><a href="@item.ObjectUrl">@item.ObjectName</a></li>
                                 }
                             }
-                        </ul>
+                        </ul>*@
                     </div>
                 </div>
                 <div class="col-lg-4">

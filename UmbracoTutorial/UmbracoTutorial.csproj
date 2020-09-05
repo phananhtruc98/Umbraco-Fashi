@@ -392,13 +392,21 @@
   <ItemGroup>
     <Compile Include="App_Data\Models\BannerItem.generated.cs" />
     <Compile Include="App_Data\Models\BannerManagement.generated.cs" />
+    <Compile Include="App_Data\Models\Blog.generated.cs" />
+    <Compile Include="App_Data\Models\Category.generated.cs" />
+    <Compile Include="App_Data\Models\CategoryManagement.generated.cs" />
     <Compile Include="App_Data\Models\CommonObject.generated.cs" />
+    <Compile Include="App_Data\Models\Contact.generated.cs" />
     <Compile Include="App_Data\Models\File.generated.cs" />
     <Compile Include="App_Data\Models\Folder.generated.cs" />
     <Compile Include="App_Data\Models\Home.generated.cs" />
     <Compile Include="App_Data\Models\Image.generated.cs" />
+    <Compile Include="App_Data\Models\Management.generated.cs" />
     <Compile Include="App_Data\Models\Member.generated.cs" />
     <Compile Include="App_Data\Models\OpenGraph.generated.cs" />
+    <Compile Include="App_Data\Models\Root.generated.cs" />
+    <Compile Include="App_Data\Models\SEO.generated.cs" />
+    <Compile Include="App_Data\Models\Shop.generated.cs" />
     <Compile Include="App_Data\Models\SocialMedia.generated.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -425,8 +433,6 @@
     <Content Include="fonts\themify.eot" />
     <Content Include="fonts\themify.ttf" />
     <Content Include="fonts\themify.woff" />
-    <Content Include="App_Data\Models\all.dll.path" />
-    <Content Include="App_Data\Models\models.hash" />
     <None Include="packages.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
